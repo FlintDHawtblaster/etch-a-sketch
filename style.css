@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.gridClass {
+    display: flex;
+    height: 100px;
+}
+
+.grid-inner {
+    flex-grow: 0;
+    border: 1px solid black;
+    min-width: 100px;
+    min-height: 100px;
+}
