@@ -1,7 +1,21 @@
 const containerDiv = document.querySelector(".container");
 const gridBtn = document.querySelector("button");
 let btnPressed = false;
-let numberOfSquares = 0; 
+let numberOfSquares = 0;
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}   
+
+function RGB() {
+    let redColor = getRandomInt(1,255);
+    let greenColor = getRandomInt(1,255);
+    let blueColor = getRandomInt(1,255);
+
+    return `rgb(${redColor} ${greenColor} ${blueColor})`;
+}
 
 function createGrid(booleanPressed) {
     if (booleanPressed) {
@@ -18,7 +32,7 @@ function createGrid(booleanPressed) {
                 newDiv.appendChild(innerDiv);
 
                 innerDiv.addEventListener("mouseenter", (event) => {
-                    event.target.style.backgroundColor = "black";
+                    event.target.style.backgroundColor = RGB();
                 })
             }
 
@@ -38,7 +52,7 @@ for (let i = 1; i <= 16; i++) {
         newDiv.appendChild(innerDiv);
 
         innerDiv.addEventListener("mouseenter", (event) => {
-            event.target.style.backgroundColor = "black";
+            event.target.style.backgroundColor = RGB();
         })
     }
 
