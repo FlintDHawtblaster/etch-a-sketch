@@ -2,11 +2,12 @@ const containerDiv = document.querySelector(".container");
 const gridBtn = document.querySelector("button");
 let btnPressed = false;
 let numberOfSquares = 0;
+let iteration = 0;
 
 function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }   
 
 function RGB() {
@@ -53,6 +54,12 @@ for (let i = 1; i <= 16; i++) {
 
         innerDiv.addEventListener("mouseenter", (event) => {
             event.target.style.backgroundColor = RGB();
+            // event.target.style.backgroundColor = "black";
+            event.target.style.opacity = iteration;
+
+            if (iteration < 1.0) {
+                iteration = iteration + 0.1;
+            }
         })
     }
 
